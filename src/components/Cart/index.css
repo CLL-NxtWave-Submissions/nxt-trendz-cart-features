@@ -37,4 +37,20 @@
   }
 }
 
-/* Write your CSS here */
+.remove-all-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.remove-all-btn {
+  color: #0b69ff;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Roboto';
+}
