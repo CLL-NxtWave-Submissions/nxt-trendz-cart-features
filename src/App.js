@@ -40,6 +40,52 @@ class App extends Component {
       }
     })
 
+  incrementCartItemQuantity = cartItemProductId =>
+    this.setState(prevState => {
+      const {cartList} = prevState
+
+      const updatedCartList = cartList.map(cartListItem => {
+        let updatedCartListItem = {}
+        if (cartListItem.id === cartItemProductId) {
+          updatedCartListItem = {
+            ...cartListItem,
+            quantity: cartListItem.quantity + 1,
+          }
+        } else {
+          updatedCartListItem = {...cartListItem}
+        }
+
+        return updatedCartListItem
+      })
+
+      return {
+        cartList: updatedCartList,
+      }
+    })
+
+  decrementCartItemQuantity = cartItemProductId =>
+    this.setState(prevState => {
+      const {cartList} = prevState
+
+      const updatedCartList = cartList.map(cartListItem => {
+        let updatedCartListItem = {}
+        if (cartListItem.id === cartItemProductId) {
+          updatedCartListItem = {
+            ...cartListItem,
+            quantity: cartListItem.quantity - 1,
+          }
+        } else {
+          updatedCartListItem = {...cartListItem}
+        }
+
+        return updatedCartListItem
+      })
+
+      return {
+        cartList: updatedCartList,
+      }
+    })
+
   render() {
     const {cartList} = this.state
 
@@ -49,6 +95,9 @@ class App extends Component {
           cartList,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
+          removeAllCartItems: this.removeAllCartItems,
+          incrementCartItemQuantity: this.incrementCartItemQuantity,
+          decrementCartItemQuantity: this.decrementCartItemQuantity,
         }}
       >
         <Switch>
