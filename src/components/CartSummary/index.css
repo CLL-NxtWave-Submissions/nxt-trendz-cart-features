@@ -1,1 +1,46 @@
-/* Write your CSS here */
+.cart-summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
+}
+
+.cart-summary-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-weight: 600;
+  color: #616e7c;
+}
+
+.cart-order-total-text {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart-order-total {
+  font-size: 0.9rem;
+  color: #171f46;
+}
+
+.cart-checkout-button {
+  background-color: #0b69ff;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .cart-checkout-button {
+    align-self: stretch;
+  }
+}

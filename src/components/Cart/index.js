@@ -3,6 +3,7 @@ import CartListView from '../CartListView'
 
 import CartContext from '../../context/CartContext'
 import EmptyCartView from '../EmptyCartView'
+import CartSummary from '../CartSummary'
 
 import './index.css'
 
@@ -32,7 +33,7 @@ const Cart = () => (
                   </button>
                 </div>
                 <CartListView />
-                {/* TODO: Add your code for Cart Summary here */}
+                <CartSummary />
               </div>
             )}
           </div>
