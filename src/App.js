@@ -67,19 +67,30 @@ class App extends Component {
     this.setState(prevState => {
       const {cartList} = prevState
 
-      const updatedCartList = cartList.map(cartListItem => {
-        let updatedCartListItem = {}
-        if (cartListItem.id === cartItemProductId) {
-          updatedCartListItem = {
-            ...cartListItem,
-            quantity: cartListItem.quantity - 1,
-          }
-        } else {
-          updatedCartListItem = {...cartListItem}
-        }
+      const cartItemProductData = cartList.find(
+        cartListItem => cartListItem.id === cartItemProductId,
+      )
+      let updatedCartList = null
 
-        return updatedCartListItem
-      })
+      if (cartItemProductData.quantity === 1) {
+        updatedCartList = cartList.filter(
+          cartListItem => cartListItem.id !== cartItemProductId,
+        )
+      } else {
+        updatedCartList = cartList.map(cartListItem => {
+          let updatedCartListItem = {}
+          if (cartListItem.id === cartItemProductId) {
+            updatedCartListItem = {
+              ...cartListItem,
+              quantity: cartListItem.quantity - 1,
+            }
+          } else {
+            updatedCartListItem = {...cartListItem}
+          }
+
+          return updatedCartListItem
+        })
+      }
 
       return {
         cartList: updatedCartList,

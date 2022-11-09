@@ -50,6 +50,7 @@ const CartItem = props => (
             <div className="total-price-remove-container">
               <p className="cart-total-price">Rs {price * quantity}/-</p>
               <button
+                testid="remove"
                 className="remove-button"
                 type="button"
                 onClick={onRemoveCartItem}
@@ -59,6 +60,7 @@ const CartItem = props => (
             </div>
           </div>
           <button
+            testid="remove"
             className="delete-button"
             type="button"
             onClick={onRemoveCartItem}
