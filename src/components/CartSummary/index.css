@@ -26,8 +26,12 @@
 }
 
 .cart-order-total {
-  font-size: 0.9rem;
   color: #171f46;
+}
+
+.cart-item-count-text {
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .cart-checkout-button {
@@ -37,10 +41,11 @@
   border-radius: 0.8rem;
   margin: 0;
   font-size: 0.9rem;
+  align-self: stretch;
 }
 
 @media (min-width: 768px) {
   .cart-checkout-button {
-    align-self: stretch;
+    align-self: flex-end;
   }
 }
